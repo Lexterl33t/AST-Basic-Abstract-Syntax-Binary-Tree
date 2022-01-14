@@ -10,6 +10,10 @@ class AbstractSyntaxTree
                         return self.evaluate(node.left, x) - self.evaluate(node.right, x)
                 elsif node.kind_of? AbstractSyntaxTreeMul
                         return self.evaluate(node.left, x) * self.evaluate(node.right, x)
+                elsif node.kind_of? AbstractSyntaxTreeShl
+                        return self.evaluate(node.left, x) << self.evaluate(node.right, x)
+                elsif node.kind_of? AbstractSyntaxTreeShr
+                        return self.evaluate(node.left, x) >> self.evaluate(node.right, x)
                 else
                         return "Unknow data"
                 end
