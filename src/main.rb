@@ -11,7 +11,8 @@ require_relative '../include/AbstractSyntaxTreeSub'
 def main()
         ast = AbstractSyntaxTree.new()
 
-        binary_tree = AbstractSyntaxTreeAdd.new(AbstractSyntaxTreeAdd.new(AbstractSyntaxTreeConstant.new(1), AbstractSyntaxTreeX.new()), AbstractSyntaxTreeAdd.new(AbstractSyntaxTreeConstant.new(1), AbstractSyntaxTreeConstant.new(2)))
+        # 1-(2-3)
+        binary_tree = AbstractSyntaxTreeSub.new(AbstractSyntaxTreeConstant.new(1), AbstractSyntaxTreeSub.new(AbstractSyntaxTreeConstant.new(2), AbstractSyntaxTreeConstant.new(3)))
         puts ast.evaluate(binary_tree, 1)
 end
 
