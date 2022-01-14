@@ -12,8 +12,8 @@ def main()
         ast = AbstractSyntaxTree.new()
 
         # 1-(2-3)
-        binary_tree = AbstractSyntaxTreeSub.new(AbstractSyntaxTreeConstant.new(1), AbstractSyntaxTreeSub.new(AbstractSyntaxTreeConstant.new(2), AbstractSyntaxTreeConstant.new(3)))
-        puts ast.evaluate(binary_tree, 1)
+        binary_tree = AbstractSyntaxTreeAdd.new(AbstractSyntaxTreeAdd.new(AbstractSyntaxTreeConstant.new(1), AbstractSyntaxTreeX.new()), AbstractSyntaxTreeAdd.new(AbstractSyntaxTreeConstant.new(1), AbstractSyntaxTreeConstant.new(2)))        
+        puts ast.print_ast(binary_tree, 1)
 end
 
 main()
