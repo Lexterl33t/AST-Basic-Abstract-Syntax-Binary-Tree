@@ -1,7 +1,8 @@
 require_relative 'AbstractSyntaxTree'
 
-class AbstractSyntaxTreeMul < AbstractSyntaxTree
+class AbstractSyntaxTreeShr < AbstractSyntaxTree
         attr_accessor :left, :right
+        
         def initialize(left, right)
                 self.left = left
                 self.right = right

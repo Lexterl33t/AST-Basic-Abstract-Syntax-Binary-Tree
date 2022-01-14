@@ -11,7 +11,15 @@ def main()
         ast = AbstractSyntaxTree.new()
 
         # 1 >> 3
-        binary_tree = AbstractSyntaxTreeShr.new(AbstractSyntaxTreeConstant.new(1), AbstractSyntaxTreeConstant.new(3))
+        binary_tree = ast.addSubNode(
+                ast.addAddNode(
+                        ast.addMulNode(ast.addConstantNode(2), ast.addConstantNode(2)
+                ), 
+                ast.addMulNode(
+                        ast.addConstantNode(3), ast.addConstantNode(3)
+                )), 
+                ast.addConstantNode(10)
+        )
         puts ast.evaluate(binary_tree, 1)
 end
 
