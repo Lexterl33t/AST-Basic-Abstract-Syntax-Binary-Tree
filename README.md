@@ -60,4 +60,4 @@ puts ast.evaluate(binary_tree, 1)
 ```
 
 Cet arbre résoud cette opération:
-<img src="https://raw.githubusercontent.com/brytonl33t/AST-Basic-Abstract-Syntax-Binary-Tree/master/screenshots/arbre3.png">
+<img src="https://github.com/brytonl33t/AST-Basic-Abstract-Syntax-Binary-Tree/blob/master/screenshots/arbre3.png?raw=true">
