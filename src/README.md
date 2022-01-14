@@ -25,3 +25,39 @@ binary_tree = AbstractSyntaxTreeAdd.new(AbstractSyntaxTreeAdd.new(AbstractSyntax
 
 puts ast.evaluate(binary_tree, 1)       
 ```
+
+Petit exemple de formule via une soustraction:
+```
+1-(2-3)
+````
+
+<img src="https://raw.githubusercontent.com/brytonl33t/AST-Basic-Abstract-Syntax-Binary-Tree/master/screenshots/arbre2.png">
+
+```ruby
+ast = AbstractSyntaxTree.new()
+
+# 1-(2-3)
+binary_tree = AbstractSyntaxTreeSub.new(AbstractSyntaxTreeConstant.new(1), AbstractSyntaxTreeSub.new(AbstractSyntaxTreeConstant.new(2), AbstractSyntaxTreeConstant.new(3)))
+puts ast.evaluate(binary_tree, 1)
+```
+
+J'ai ajouté des fonctions afin d'éviter des instances à tout va.
+
+```ruby
+ast = AbstractSyntaxTree.new()
+
+# 1 >> 3
+binary_tree = ast.addSubNode(
+        ast.addAddNode(
+                ast.addMulNode(ast.addConstantNode(2), ast.addConstantNode(2)
+        ), 
+        ast.addMulNode(
+                ast.addConstantNode(3), ast.addConstantNode(3)
+        )), 
+        ast.addConstantNode(10)
+)
+puts ast.evaluate(binary_tree, 1)
+```
+
+Cet arbre résoud cette opération:
+<img src="https://github.com/brytonl33t/AST-Basic-Abstract-Syntax-Binary-Tree/blob/master/screenshots/arbre3.png?raw=true">
